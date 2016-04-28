@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Angular Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+<div class="navbar-wrapper">
+	<div class="container">
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Angular Project</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+                	</ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+			<div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin shopping">
+				<header class="w3-container w3-light-grey w3-padding-hor-16">
+					<h3>My Shopping List</h3>
+				</header>
+				<ul class="w3-ul">
+            		<li ng-repeat="x in products" class="w3-padding-hor-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
+            	</ul>
+            	<div class="w3-container w3-light-grey w3-padding-hor-16">
+            		<div class="w3-row w3-margin-top">
+            			<div class="w3-col s10">
+            				<input placeholder="Add shopping items here" ng-model="addMe" class="w3-input w3-border w3-padding">
+            			</div>
+            			<div class="w3-col s2">
+            				<button ng-click="addItem()" class="w3-btn w3-padding w3-green">Add</button>
+            			</div>
+            		</div>
+            		<p class="w3-padding-left w3-text-red">{{errortext}}</p>
+            	</div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+    	<p class="pull-right"><a href="#">Back to top</a></p>
+    	<p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/libs/jquery-1.12.2.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+<script src="js/libs/angular.min.js"></script>
+<script src="js/main.min.js"></script>
+
+</body>
+</html>
